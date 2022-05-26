@@ -1,0 +1,277 @@
+/*Обнуление*/
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:focus,
+:active {
+    outline: none;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+    display: block;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: 400;
+}
+
+/*--------------------*/
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('fonts/Montserrat-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-display: swap;
+    font-style: normal;
+}
+
+body {
+    background-color: #d1d1d1;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    margin-top: 4%;
+    margin-bottom: 5%;
+}
+
+.title__text {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+}
+
+span {
+    background-color: yellow;
+    padding: 7px 10px;
+    border-radius: 8px;
+}
+
+.slider__content {
+    display: flex;
+}
+
+.btn {
+    height: 0px;
+    width: 0px;
+    background-color: transparent;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid #5e5e5e;
+}
+
+.btn:hover {
+    border-bottom: 100px solid #505050;
+}
+
+.slider__btn_prev {
+    transform: rotate(-90deg);
+    margin-left: -10%;
+    margin-right: 10%;
+    margin-top: 30%;
+}
+
+.slider__btn_next {
+    transform: rotate(90deg);
+    margin-left: 10%;
+    margin-right: -10%;
+    margin-top: 30%;
+}
+
+.slider__image {
+    width: 600px;
+    height: 600px;
+    border-radius: 8px;
+    overflow: hidden;
+    /* z-index: -1; */
+}
+
+.slider-line {
+    display: flex;
+    height: 600px;
+    position: relative;
+    /* transition: all ease 1s; */
+}
+
+.slider-line img {
+    height: 100%;
+    width: auto;
+}
+
+.slider__nav {
+    position: relative;
+    margin: 5% auto;
+    display: flex;
+}
+
+.slider__dots {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.slider__dots button {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #8d8d8d;
+    margin: 0px 10px;
+    transition: all ease 1s;
+}
+
+.slider__dots button.active {
+    background-color: #5c5c5c;
+    transition: all ease 1s;
+}
+
+@media(max-width: 768px) {
+    .title__text {
+        font-size: 34px;
+    }
+
+    .slider__image {
+        width: 400px;
+        height: 400px;
+    }
+
+    .slider-line {
+        height: 400px;
+    }
+
+    .btn {
+        border-left: 25px solid transparent;
+        border-right: 25px solid transparent;
+        border-bottom: 50px solid #5e5e5e;
+    }
+
+    .btn:hover {
+        border-bottom: 50px solid #505050;
+    }
+
+    .slider__dots button {
+        width: 10px;
+        height: 10px;
+    }
+
+    .active{
+        width: 12px;
+        height: 12px;
+    }
+}
+
+@media(max-width: 425px) {
+    .title {
+        margin: 10% auto;
+    }
+    .title__text {
+        font-size: 18px;
+    }
+
+    .slider__image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .slider-line {
+        height: 200px;
+    }
+
+    .btn {
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-bottom: 30px solid #5e5e5e;
+    }
+
+    .btn:hover {
+        border-bottom: 30px solid #505050;
+    }
+
+    .slider__dots button{
+        width: 7px;
+        height: 7px;
+    }
+
+    .active{
+        width: 9px;
+        height: 9px;
+    }
+}
