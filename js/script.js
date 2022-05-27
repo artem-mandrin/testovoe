@@ -84,8 +84,12 @@ document.querySelector('.slider__btn_prev').addEventListener('click', function (
 dots.forEach((item, indexDot) => {                                          // Для каждого элемента массива точек
     item.addEventListener('click', () => {                                  // При нажатии на одну из точек
         if (animationFlag) return false;                                    // Если анимация запущена, то при нажатии ничего не произойдёт
-        direction = index - indexDot;                                       // Направление смещения равно разнице индексов
+        if (index >= images.length - 1) {                                   // Если показан последний слайд коллекции (клон первого)
+            index = 0;                                                      // Обнулить индекс
+            offset = 0;                                                     // Обнулить смещение коллекции
+        }
         if (index == indexDot) return false;                                // Если нажать на точку активного слайда, то ничего не произойдёт
+        direction = index - indexDot;                                       // Направление смещения равно разнице индексов
         index = indexDot;                                                   // Изменяем индекс активного слайда
         dots[indexActiveDot].classList.remove('active');                    // Удаляем класс active у текущей точки
         indexActiveDot = indexDot;                                          // Изменяем индекс активной точки
